@@ -10,7 +10,7 @@ export class SpoonacularService {
     return this.http.get(`${this.baseUrl}/${id}/information?apiKey=${this.apiKey}`);
   }
   
-  private apiKey = '8af4de3f87f64f409bd8bede8c4a4d73';
+  private apiKey = '18d22fd516ac47879473586c8f78abe9';
   private baseUrl = 'https://api.spoonacular.com/recipes';
 
   constructor(private http: HttpClient) {}

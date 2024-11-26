@@ -3,8 +3,7 @@
 
 <nav>
     <ul class="card-grid">
-    <li *ngFor="let recipe of recipes" class="card"> <!-- Altere para 'recipes' -->
-            <!-- Usando routerLink para navegar diretamente para a página de detalhes -->
+    <li *ngFor="let recipe of recipes" class="card">
         <a [routerLink]="['/detalhes', recipe.id]" class="content">
   
           <div class="front">
