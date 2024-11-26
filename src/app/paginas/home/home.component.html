@@ -1,1 +1,11 @@
-<p>home works!</p>
+<h1>Bem vindos ao melhor site de receitas que existe</h1>
+<div class="carousel">
+    <div class="carousel-inner">
+      <div *ngFor="let recipe of recipes; let i = index" class="carousel-item" [class.active]="i === currentIndex">
+        <img [src]="recipe.image" alt="Imagem da Receita">
+        <div class="carousel-caption">{{ recipe.title }}</div>
+      </div>
+    </div>
+    <button class="carousel-btn prev" (click)="prev()">❮</button>
+    <button class="carousel-btn next" (click)="next()">❯</button>
+  </div>

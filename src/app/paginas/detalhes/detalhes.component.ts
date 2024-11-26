@@ -17,12 +17,12 @@ export class DetalhesComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.params['id'];
-    console.log('ID da receita:', id);  // Adicione esse log para verificar
+    console.log('ID da receita:', id);  
     if (id) {
       this.spoonacularService.getRecipeDetails(id).subscribe(
         (data) => {
           this.recipeDetails = data;
-          console.log('Detalhes da receita:', data);  // Verifique o retorno da API
+          console.log('Detalhes da receita:', data);  
         },
         (error) => {
           console.error('Erro ao carregar os detalhes da receita:', error);
