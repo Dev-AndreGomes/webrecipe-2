@@ -1,12 +1,38 @@
-<div *ngIf="recipes && recipes.length > 0; else noRecipes">
-    <div *ngFor="let recipe of recipes" class="recipe-card">
-      <img *ngIf="recipe.image" [src]="recipe.image" alt="{{ recipe.title }}">
-      <h3>{{ recipe.title }}</h3>
-      <a [routerLink]="['/detalhes', recipe.id]">Ver Detalhes</a>
-    </div>
-  </div>
-  <ng-template #noRecipes>
-    <p>Nenhuma receita disponível no momento.</p>
-  </ng-template>
+<div class="container-c">
+    <h1 class="catalog-title">Receitas</h1>
+
+<nav>
+    <ul class="card-grid">
+    <li *ngFor="let recipe of recipes" class="card"> <!-- Altere para 'recipes' -->
+            <!-- Usando routerLink para navegar diretamente para a página de detalhes -->
+        <a [routerLink]="['/detalhes', recipe.id]" class="content">
   
+          <div class="front">
+            <div class="img">
+              <img
+                [src]="recipe.image"
+                alt="Imagem da Receita"
+                class="card-img-top"
+              />
+            </div>
   
+            <div class="front-content">
+              <small class="badge">Categoria: {{ recipe.category }}</small>
+              <div class="description">
+                <div class="title">
+                  <p class="title">
+                    <strong>{{ recipe.title }}</strong>
+                  </p>
+                </div>
+                <p class="card-footer">
+                  {{ recipe.cookingTime }} Mins &nbsp; | &nbsp;
+                  {{ recipe.serving }} Serving
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>

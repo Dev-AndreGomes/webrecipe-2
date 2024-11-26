@@ -1,0 +1,10 @@
+footer {
+    display: flex;
+    color: white;
+    background-color: orange;
+    justify-content: center;
+    position: static;
+    bottom: 0;
+    width: 100%; /* Faz o rodapé ocupar toda a largura da tela */
+    z-index: 1000; /* Garante que o rodapé fique acima de outros conteúdos */
+  }
