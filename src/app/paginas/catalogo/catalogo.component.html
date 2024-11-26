@@ -1,0 +1,12 @@
+<div *ngIf="recipes && recipes.length > 0; else noRecipes">
+    <div *ngFor="let recipe of recipes" class="recipe-card">
+      <img *ngIf="recipe.image" [src]="recipe.image" alt="{{ recipe.title }}">
+      <h3>{{ recipe.title }}</h3>
+      <a [routerLink]="['/detalhes', recipe.id]">Ver Detalhes</a>
+    </div>
+  </div>
+  <ng-template #noRecipes>
+    <p>Nenhuma receita disponível no momento.</p>
+  </ng-template>
+  
+  
